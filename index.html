@@ -5,14 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Md Ashraf Mahmud Anjan - Junior DevOps Engineer Portfolio" />
   <title>Md Ashraf Mahmud Anjan | DevOps Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+      --card-bg: #fff;
+      --link-color: #3498db;
+    }
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --card-bg: #1e1e1e;
+      --link-color: #4dabf7;
+    }
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: all 0.3s ease;
     }
     header, footer {
       background: #1a1a1a;
@@ -31,7 +45,7 @@
       margin: 2em auto;
     }
     h1, h2, h3 {
-      color: #2c3e50;
+      color: var(--text-color);
     }
     .skills-grid, .projects {
       display: grid;
@@ -39,23 +53,47 @@
       gap: 20px;
     }
     .project-card, .skill-card {
-      background: #fff;
+      background: var(--card-bg);
       border: 1px solid #ddd;
       padding: 1em;
-      border-radius: 8px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
     .button {
       display: inline-block;
       padding: 0.5em 1em;
-      background: #3498db;
+      background: var(--link-color);
       color: #fff;
       text-decoration: none;
       border-radius: 5px;
       margin-top: 1em;
     }
+    .contact-links a {
+      color: var(--link-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+    .icon {
+      margin-right: 8px;
+    }
+    .dark-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #444;
+      color: #fff;
+      border: none;
+      padding: 0.5em 1em;
+      cursor: pointer;
+      border-radius: 6px;
+    }
   </style>
 </head>
 <body>
+  <button class="dark-toggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
   <header>
     <h1>Md Ashraf Mahmud Anjan</h1>
     <p>Junior DevOps Engineer | AWS | CI/CD | Docker | Kubernetes</p>
@@ -128,17 +166,25 @@
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>📧 <a href="mailto:anjan1709030@stud.kuet.ac.bd">anjan1709030@stud.kuet.ac.bd</a></p>
-      <p>📱 <a href="tel:+8801829446782">+880 1829446782</a></p>
-      <p>
-        🔗 <a href="https://github.com/Anjan854" target="_blank">GitHub</a> |
-        <a href="https://www.linkedin.com/in/anjan30" target="_blank">LinkedIn</a>
-      </p>
+      <div class="contact-links">
+        <p>📧 <a href="mailto:anjan1709030@stud.kuet.ac.bd"><span class="icon">📧</span>anjan1709030@stud.kuet.ac.bd</a></p>
+        <p>📱 <a href="tel:+8801829446782"><span class="icon">📞</span>+880 1829446782</a></p>
+        <p>
+          🔗 <a href="https://github.com/Anjan854" target="_blank">GitHub</a> |
+          <a href="https://www.linkedin.com/in/anjan30" target="_blank">LinkedIn</a>
+        </p>
+      </div>
     </section>
   </div>
 
   <footer>
     <p>&copy; 2025 Md Ashraf Mahmud Anjan. All rights reserved.</p>
   </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
 </body>
 </html>
